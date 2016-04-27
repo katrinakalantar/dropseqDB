@@ -1,0 +1,114 @@
+/*body {
+//  font-family: 'Droid Sans', serif;
+//}
+*/
+body {
+  font: 10px sans-serif;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.point {
+  fill: steelblue;
+  stroke: #000;
+}
+#TSNE path{
+        fill: none;
+        stroke-width: 1px;
+        stroke: #666;
+      }
+
+#summary {
+  padding-top: 5em;
+}
+
+#pie1 {
+ float: left; 
+}
+
+#pie1 g {
+  cursor: hand;
+  cursor: pointer;
+}
+
+#pie1, #pie2 {
+  /*padding-left: 3em;*/
+  font: 13px sans-serif;
+}
+
+
+
+body {
+    background-color: white;
+    color: black;
+	font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+}
+
+div.bar {
+    display: inline-block;
+    width: 20px;
+    height: 75px;   /* We'll override this later */
+    background-color: teal;
+}
+
+#cellHM {
+    width: 800px;
+    margin-left: auto ;
+    margin-right: auto ;
+}
+
+.background {
+  fill: #eee;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+
+/* Hover info */
+.hoverinfo {
+    font-size: 9px;
+    padding: 4px; 
+    border-radius: 1px; 
+    background-color: #FFF; 
+    box-shadow: 1px 1px 5px #CCC; 
+    font-size: 12px; 
+    border: 1px solid #CCC; 
+}
+
+
+
+
+/*FOR BAR CHART*/
+      .bar rect {
+        fill: #000066;
+        shape-rendering: crispEdges;
+      }
+      .bar rect:hover{
+        fill: rgba(150,150,100,.8);
+      }
+
+     .axis {
+        font: 10px sans-serif;
+      }
+      
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+      }
+      
+      .x.axis path {
+        display: none;
+      }

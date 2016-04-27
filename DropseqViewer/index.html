@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app='myapp'>
+
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Droid+Sans">
+    
+    <script data-require="angular.js@1.1.5" data-semver="1.1.5" src="https://code.angularjs.org/1.1.5/angular.min.js"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/1.2.1/lodash.min.js"></script>
+    <script src="app.js"></script>
+    <script src="FileSaver.js"></script>
+    <script src="require.js"></script>
+  </head>
+
+  <body data-ng-controller='SummaryController'>
+    
+  <script>
+   angular.module('inputExample', [])
+     .controller('ExampleController', ['$scope', function($scope) {
+       $scope.gene = {name: 'guest'};
+     }]);
+  </script>
+  
+  
+  <div ng-controller="MyCtrl">
+
+    <label>
+      Analysis Directory:
+      <input type="text" ng-model="foo2" placeholder="Enter directory" />
+      <input type="button" ng-click="sendAnalysisDir()" value="Send" ng-disabled="foo2 == null" />
+    </label>
+    <label>
+      New Analysis Name:
+      <input type="text" ng-model="foo3" placeholder="Analysis Name" />
+      <input type="button" ng-click="sendAnalysisName()" value="Send" ng-disabled="foo3 == null" />
+    </label>
+
+    <label>
+      Gene Name:
+      <input type="text" ng-model="foo" placeholder="Enter something" />
+     <input type="button" ng-click="doSomething()" value="Send" ng-disabled="foo == null" />
+    
+    </label>
+    <hr>
+    <br>
+  </div>
+  
+  
+  
+  <!--<div ng-controller="SummaryController"> -->
+  
+  <div ng-controller="SummaryController">
+ 
+    <input type="button" ng-click="reloadTSNE()" value="Reload TSNE" />
+    <input type="button" ng-click="writeCells()" value="Write Cells To File" />
+
+    <!--<input type="button" id="upregulated" ng-click="upregulate()" value="Get Upregulated Genes" />-->
+    
+
+    <h1>Dropseq TSNE Analysis</h1>
+    <ng-view></ng-view>
+    <div summary="visualizeTSNE"></div>
+    
+    </div>
+  </body>
+
+</html>

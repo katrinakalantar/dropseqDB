@@ -1,0 +1,6 @@
+{
+"gene_set_method":"blah",
+"gene_number":400,
+"cell_expression_threshold":2000,
+"dim_red_method":"TSNE"
+}
