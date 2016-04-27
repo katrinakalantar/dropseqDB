@@ -53,6 +53,19 @@ the script will likely error. TODO
 
 
 ### OTHER GENERAL FILES
+
+#### Lupus_analysis.py.ipynb
+ipython notebook containing functions used for full analysis of lupus data - largely used as an 
+exploratory tool, but the methods are useful for both flat file combined analysis and analysis of data
+downloaded from the database.
+
+
+#### Lupus_subcluster_analysis.ipynb
+ipython notebook containing methods for differential expression analysis using original d3data.tsv and 
+the corresponding cell subcluster files generated through use of the dropseq viewer cell selection and 
+download function.
+
+
 #### dropseq_1.py
 Pipeline-style script containing many functions to remove low expression rows/columns (genes/cells)
 and remove high variance data (genes/cells).
