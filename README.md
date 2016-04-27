@@ -8,6 +8,8 @@ work done in the Derisi Lab at UCSF (Spring 2016 Rotation)
 ##### create_dropseqDB2.sql
 ##### dropseq_1.py
 ##### normalizeRPM.py
+##### Lupus_analysis.py.ipynb
+##### Lupus_subcluster_analysis.ipynb
 
 ### CREATE DROPSEQ2 DATABASE
 
