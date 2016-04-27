@@ -1,6 +1,5 @@
 __author__ = 'KATRINA'
 
-
 '''
 
 generate a data frame with statistics on expression for each gene
@@ -8,15 +7,13 @@ options:
 1. sort on total expression summed over the whole sample (all cells)
 2. sort on mean expression for only cells expressing that gene
 
+note: this script was used to determine the most highly expressed genes from CSF data
+
 #investigative
 
 '''
 
-__author__ = 'KATRINA'
-
-from time import time
 from pandas import DataFrame
-import pandas as pd
 import collections
 import heapq
 import seaborn as sns
@@ -29,13 +26,6 @@ df = DataFrame.from_csv(input_file, sep="\t")
 
 sampleName = input_file.split("\\")[-1].split('.')[0]
 
-#col_names = list(df.columns.values)
-#row_names = df.index
-
-def removeAllZeros(df):
-    df_no_zeros = df.loc[(df!=0).any(axis=1)] #remove all zero-only rows
-    return df_no_zeros
-
 def removeRowsLessThanTen(df):
     df_no_under_ten = df.loc[(df.sum(axis=1) >= 10)] #remove all rows that have sum < 10
     return df_no_under_ten
@@ -47,7 +37,6 @@ def removeCols(df):
 
 setA = []
 setB = []
-
 
 #take only subset of data that meets initial filtering conditions
 df_clean = removeCols(removeRowsLessThanTen(df))
@@ -133,7 +122,6 @@ set_B = set(setB)
 
 final_gene_set = set_A.intersection(set_B)
 print(final_gene_set)
-
 
 '''
 TODO: This part doesn't work - need a way to access the data frame values for correct genes

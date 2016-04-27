@@ -1,6 +1,9 @@
 __author__ = 'KATRINA'
 
 '''
+
+NOTE: this file was for reconstruction from initial dropseq DB to flat file, it is not useful with DROPSEQ2 DB
+
 March 18, 2016
 
 python DB_generateRCFile.py "SELECT * FROM Data WHERE (SampleID=3 OR SampleID=5) AND (GeneID=4 OR GeneID=10)" outputFile [-RPM]
@@ -86,7 +89,6 @@ while row is not None:
 classification = {}
 classification["SampleID"] = sample_classification
 json.dump(classification, open(sys.argv[2]+"_classification.txt",'w'))
-
 
 #print(df)
 cursor.close()

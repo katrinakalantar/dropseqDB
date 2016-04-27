@@ -5,22 +5,15 @@ __author__ = 'KATRINA'
 investigating Machine Learning (ML) methods for determining the most informative genes for separating two datasets
 python ML_1.py inputDF classificationFile [-norm]
 
+#outdated
 '''
 
-from time import time
-from pandas import DataFrame
 import pandas as pd
-import collections
-import heapq
-import seaborn as sns
 import numpy as np
-import matplotlib.pyplot as plt
-import scipy.stats
 import sklearn.feature_selection as fs
 import json
 import sys
-import mygene
-
+#import mygene
 
 def normalizeRPM(df):
     total_transcripts_per_cell = []
@@ -40,7 +33,6 @@ df = pd.read_csv(input_file,sep="\t", index_col=0)
 if '-norm' in sys.argv:
     df_norm = normalizeRPM(df)
     df = df_norm
-
 
 print(len(df.columns.values))
 print(len(df.index))
@@ -65,8 +57,6 @@ for i in indices_of_interest:
 print(genes_of_interest)
 subset_df = df[df.index.isin(genes_of_interest)]
 subset_df.to_csv(sys.argv[1]+"_df_result.txt",sep="\t")
-
-
 
 
 ##TESTING - GET PROTEIN INFORMATION FROM DATABASE, USE THIS WITH CYTOSCAPE

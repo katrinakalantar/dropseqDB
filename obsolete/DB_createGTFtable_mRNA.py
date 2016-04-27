@@ -6,16 +6,15 @@ __author__ = 'KATRINA'
 
 Read in the GTF file and add all entries to the Gene table within the dropseq database
 
+note: this was used to create the `Genes` table in initial dropseq database, but this table
+has been removed from the dropseq2 database and a table containing only gene names exists
+
+this script may be useful for reconstruction of gene information from gene names
+
 '''
 
 import MySQLdb
-from datetime import date
-import os
-import glob
-from pandas import DataFrame
 import sys
-import random
-import string
 from string import Template
 import json
 

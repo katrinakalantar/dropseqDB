@@ -2,7 +2,14 @@ __author__ = 'KATRINA'
 
 '''
 
-#this file differs from DBconnection_1.py because it creates a new file format from the table and then loads that into the mysql database
+this file differs from DBconnection_1.py because it creates a new file format from the table and then loads that into the mysql database
+
+DBconnection_2.py [input_directory *containing all the sample files to be loaded with that experiment]
+
+initial attempt at a direct connection to DROPSEQ DB
+note: this script is [ALSO] extremely slow!
+
+#outdated
 
 '''
 
@@ -14,18 +21,6 @@ import sys
 from string import Template
 import json
 import numpy as np
-
-def removeAllZeros(df):
-    df_no_zeros = df.loc[(df!=0).any(axis=1)] #remove all zero-only rows
-    return df_no_zeros
-
-def removeRowsLessThanTen(df):
-    df_no_under_ten = df.loc[(df.sum(axis=1) >= 10)] #remove all rows that have sum < 10
-    return df_no_under_ten
-
-def removeCols(df):
-    df_no_col_under_twothousand = df.loc[:,(df.sum(axis=0) >= 2000)]
-    return df_no_col_under_twothousand
 
 cnx = MySQLdb.connect("localhost","mysql_user","balamuthia","dropseq", local_infile=1)
 cursor = cnx.cursor()
@@ -63,20 +58,23 @@ add_data_template = Template("INSERT IGNORE INTO Data"
               "(SampleID, GeneID, CellID, ReadCounts) "
               "VALUES ('$sample_id', '$gene_id', '$cell_id', '$rc')")
 
-#add experiment
-#query to get experiment ID
-#for every gene in the input file:
-    #query gene table to see if gene exists
-    #if gene does not exist in gene table
-        #add gene
-#add sample
-#query to get sampleID
-#for every cell in the input file:
-    #add cell to cell table
-    #query to get cellID
-    #for every gene in the input file:
-        #query to get geneID
-        #add data (sampleID, cellID, geneID)
+'''
+OUTLINE
+add experiment
+query to get experiment ID
+for every gene in the input file:
+    query gene table to see if gene exists
+    if gene does not exist in gene table
+        add gene
+add sample
+query to get sampleID
+for every cell in the input file:
+    add cell to cell table
+    query to get cellID
+    for every gene in the input file:
+        query to get geneID
+        add data (sampleID, cellID, geneID)
+'''
 
 input_directory = sys.argv[1]
 print(input_directory)
