@@ -52,7 +52,7 @@ note:
 the script will likely error. TODO
 
 
-### OTHER BASIC USE FILES
+### OTHER GENERAL FILES
 #### dropseq_1.py
 Pipeline-style script containing many functions to remove low expression rows/columns (genes/cells)
 and remove high variance data (genes/cells).
@@ -72,7 +72,7 @@ is actually not correct.
 AND the updated normalization method "normalizeRPM_new" which normalizes per cell (column)
 
 
-###//investigative
+###/INVESTIGATIVE
 goal: OBSERVE DISTRIBUTIONS WITHIN THE DATA:
 
 ####investigateGeneVariance.py
@@ -117,7 +117,7 @@ note: I was using this specifcially with output of BackSPIN algorithm
 > python heatmap.py [input_file]
 ```
 
-###//DropseqViewer
+###/DROPSEQVIEWER
 goal: this directory contains all files required to load webserver, including a sample data file
 
 app.js, index.html, and style.css are the primary files
@@ -126,7 +126,7 @@ however, they rely on FileSaver.js, require.js, script.js, and summary.html for 
 the /analysis directory contains an example_lupusPvNID dataset with a d3data.tsv file to test loading
 
 
-###//obsolete
+###/OBSOLETE
 note: these files are outdated or no longer useful in the direct analysis pipeline
 
 ####CSFTest_1.py
